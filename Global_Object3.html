@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var funcThis = null; 
+		 
+		function Func(){
+		    
+		    var value = 1;
+		    funcThis = this;
+		}
+
+		var o1 = Func();
+		if(funcThis === window){
+			
+		    document.write('window <br />');
+		}
+		//this = window
+
+		var o2 = new/*생성자 사용*/ Func();
+		if(funcThis === o2){
+
+		    document.write('o2 <br />');
+		}
+		//this = o2
+
+		Func.value=2;
+		document.write(o1.value);
+		document.write(o2.value);
+	</script>
+</body>
+</html>

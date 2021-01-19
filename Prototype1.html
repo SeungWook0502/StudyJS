@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Ultra(){}
+		Ultra.prototype.ultraProp = 1; //상속되지 않음
+		//하위부터 찾기 때문에 이미 ultraProp이 있는 Prototype인 Super에서 찾아서 Ultra까지 올라오지 않음
+
+		function Super(){}
+		Super.prototype = new Ultra();
+		Super.prototype.ultraProp = 2; //상속됨
+		//Super Prototype <- Ultra Object
+		 
+		function Sub(){}
+		Sub.prototype = new Super();
+		Sub.ultraProp = 3; //상속되지 않음
+		//Property를 Prototype이 아닌 Property를 변경하였기 때문에 
+		//Sub Prototype <- Super Object
+
+		var o = new Sub();
+		//o Object <- Sub Object
+
+		console.log(o.ultraProp);
+		console.log(Sub.ultraProp);
+		console.log(Sub.prototype.ultraProp);
+		
+		//이러한 구조를 Prototype Chain이라고 한다.
+
+	</script>
+</body>
+</html>

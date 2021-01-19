@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		// function func1(){
+
+		// 	document.write(this);
+		//     if(window === this){
+		//         document.write("1 : window === this"+"<br />");
+		//     }
+		// }
+
+		// function A(){
+
+		// 	function func2(){
+		// 	    document.write(this);
+		// 	    if(window === this){
+		// 	        document.write("2 : window === this"+"<br />");
+		// 	    }
+		// 	    if(A === this){
+		// 	        document.write("2 : A === this"+"<br />");
+		// 	    }
+		// 	}
+		// }
+
+		var o = {
+
+		    func3 : function(){
+				document.write(this);
+		        if(o === this){
+		            document.write("3 : o === this"+"<br />");
+		        }
+		    }
+		}
+
+//		func1();
+//		A.func2();
+		o.func3(); 
+
+	</script>
+</body>
+</html>

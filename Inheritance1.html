@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		// function Person(name){
+		//     this.name = name;
+		//     this.introduce = function(){
+		//         return 'My name is '+this.name; 
+		//     }   
+		// }
+		// var p1 = new Person('egoing');
+		// document.write(p1.introduce()+"<br />");
+
+		function Person(name){
+		    this.name = name;
+		}
+		document.write(typeof Person+"<br />");
+		Person.prototype.name=null;
+		Person.prototype.introduce = function(){
+		    return 'My name is '+this.name; 
+		}
+		var p1 = new Person('egoing');
+		document.write(p1.introduce()+"<br />");
+		document.write(typeof Person+"<br />");
+
+	</script>
+</body>
+</html>

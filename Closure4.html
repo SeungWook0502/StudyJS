@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		// object : 0,1,2,3,4
+
+		// error code : 5,5,5,5,5
+		var arr = []
+		for(var i = 0; i < 5; i++){
+		    arr[i] = function(){
+		        return i;
+		    }   
+		}
+		for(var index in arr) {
+		    console.log(arr[index]());
+		}
+
+		//normal code : 0,1,2,3,4
+		
+		var arr = []
+
+		for(var i = 0; i < 5; i++){
+		    arr[i] = (function(id){
+		    	return function(){
+		        	return id;
+		    	}	
+		    })(i);
+		}
+
+		for(var index in arr) {
+		    console.log(arr[index]());
+		}
+
+	</script>
+</body>
+</html>

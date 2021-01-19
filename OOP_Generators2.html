@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		function Person(){}
+
+		//var p = Person{};
+		var p = new Person{}; //
+
+		p.name = 'egoing';
+		p.introduce = function(){
+			return 'My name is '+this.name;
+		}
+		document.write(p.indroduce());
+
+		//객체 선언시에 생성과 동시에 초기화를 하여
+		//재사용성과 효율을 높혔다.(반복이 없음)
+
+		function Person(name){
+		    this.name = name; //this.은 Person을 가리킨다.
+		    this.introduce = function(){
+		        return 'My name is '+this.name; 
+		    }   
+		}
+		var p1 = new Person('egoing');
+		document.write(p1.introduce()+"<br />");
+		 
+		var p2 = new Person('leezche');
+		document.write(p2.introduce());
+	</script>
+</body>
+</html>

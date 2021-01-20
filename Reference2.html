@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var a = 1;
+		function func(b){
+		    b = 2;
+		}
+		func(a);
+		console.log(a); //1
+		//Primitive type을 arguments로 넘겼을 때
+
+		var a = {'id':1};
+		function func1(b){ //parameter b를 arguments a로 받은 것이기 때문에 arguments a의 Referance Object와 b의 Referance는 같은 Referance를 한다. -> b=a
+		    b = {'id':2}; //b가 새로운 Object를 Referance하기 때문에 a에 영향을 주지 않는다.
+		}
+		func1(a);
+		console.log(a.id); //1
+		//Object를 arguments로 넘겼을 때
+		//새로운 Object의 값 변경
+
+		var a = {'id':1};
+		function func2(b){ //parameter b를 arguments a로 받은 것이기 때문에 arguments a의 Referance Object와 b의 Referance는 같은 Referance를 한다. -> b=a
+		    b.id = 2; //따라서 같은 Referance의 값을 변경하기 때문에 a.id Property도 값이 변경된다.
+		}
+		func2(a);
+		console.log(a.id);  // 2
+		//Object를 arguments로 넘겼을 때
+		//기존의 Object의 값 변경
+
+	</script>
+</body>
+</html>

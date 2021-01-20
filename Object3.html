@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		Object.prototype.contain = function(neddle) {
+		    for(var name in this){
+		        if(this[name] === neddle){
+		            return true;
+		        }
+		    }
+		    return false;
+		}
+		//Object의 Prototype하위 메소드를 정의하였기 때문에 모든 객체들은 해당 메소드를 상속받게된다.
+
+		var o = {'name':'egoing', 'city':'seoul'}
+		var a = ['egoing','leezche','grapittie'];
+	
+		for(var name in o){
+	        console.log(name);
+		}//return All Property(Inheritance Property + Own Property)
+
+		for(var name in o){
+	        console.log(o.hasOwnProperty(name));
+		}//boolean return
+		// Own Property -> true
+		// Inheritance Property -> false
+
+		for(var name in o){
+		    if(o.hasOwnProperty(name)){
+		        console.log(name);
+		    }
+		}//따라서 해당 boolean을 통해 자신이 가지고있는 property만 구분이 가능하다.
+
+	</script>
+</body>
+</html>

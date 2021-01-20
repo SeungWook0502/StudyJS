@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		Object.prototype.contain = function(neddle) {
+		    for(var name in this){
+		        if(this[name] === neddle){
+		            return true;
+		        }
+		    }
+		    return false;
+		}
+		//Object의 Prototype하위 메소드를 정의하였기 때문에 모든 객체들은 해당 메소드를 상속받게된다.
+
+		var o = {'name':'egoing', 'city':'seoul'}
+		console.log(o.contain('seoul'));
+		var a = ['egoing','leezche','grapittie'];
+		console.log(a.contain('leezche'));
+
+	</script>
+</body>
+</html>
